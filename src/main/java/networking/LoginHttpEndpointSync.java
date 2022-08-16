@@ -1,4 +1,36 @@
 package networking;
 
 public interface LoginHttpEndpointSync {
+    /**
+     * Log in using provided credentials
+     * @return the aggregated result of login operation
+     * @throws NetworkErrorExceptions if login attempt fails due to network error
+     */
+
+    EndpointResult loginSync(String username, String password) throws NetworkErrorExceptions;
+
+    enum EndpointResultStatus {
+        SUCCESS,
+        AUTH_ERROR,
+        SERVER_ERROR,
+        GENERAL_ERROR
+    }
+
+    class EndpointResult {
+        private final EndpointResultStatus mStatus;
+        private final String mAuthToken;
+
+        public EndpointResult(EndpointResultStatus status, String authToken) {
+            mStatus = status;
+            mAuthToken = authToken;
+        }
+
+        public EndpointResultStatus getStatus() {
+            return mStatus;
+        }
+
+        public String getAuthToken() {
+            return mAuthToken;
+        }
+    }
 }
