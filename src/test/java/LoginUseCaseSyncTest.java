@@ -2,11 +2,11 @@ import authtoken.AuthTokenCache;
 import eventbus.EventBusPoster;
 import networking.LoginHttpEndpointSync;
 import networking.NetworkErrorExceptions;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.doThrow;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class LoginUseCaseSyncTest {
     private static final String USERNAME = "username";
@@ -16,7 +16,20 @@ public class LoginUseCaseSyncTest {
     LoginHttpEndpointSync mLoginHttpEndpointSyncMock;
     AuthTokenCache mAuthTokenCacheMock;
     EventBusPoster mEventBusPosterMock;
+    LoginUseCaseSync SUT;
 
+    @Before
+    public void setup() throws Exception {
+        mLoginHttpEndpointSyncMock = mock(LoginHttpEndpointSync.class);
+        mAuthTokenCacheMock = mock(AuthTokenCache.class);
+        mEventBusPosterMock = mock(EventBusPoster.class);
+        SUT = new LoginUseCaseSync(
+                mLoginHttpEndpointSyncMock,
+                mAuthTokenCacheMock,
+                mEventBusPosterMock
+        );
+
+    }
 
     @Test
     public void loginSync_success_usernameAndPasswordPassedToEndpoint() {
