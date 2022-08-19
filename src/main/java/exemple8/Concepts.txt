@@ -1,0 +1,27 @@
+Objects vs Data Structures
+
+Exposing behaviour and exposing data are 2 completely different responsibilities, therefore no class in the code base
+should expose both.
+
+In Java, both objects and data structures implicitly inherit from a class called Object.
+
+Objects
+    . Expose behaviour;
+    . Should be injected into other objects;
+    . Need to be unit tested explicitly;
+    . Eligible to be substituted with test doubles.
+
+Data Structures:
+    . Expose data;
+    . Should not have behaviour;
+    . Can be instantiated by other objects and data structures;
+    . Unit tests for objects will test data structures implicitly;
+    . No need to substitute with test doubles.
+
+"Mature programmers know that the idea that everything is an object is a myth"
+    - Robert C. Martin, Clean Code.
+
+"AAA" pattern:
+    . Arrange
+    . Act
+    . Assert.
