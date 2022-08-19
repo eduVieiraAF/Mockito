@@ -1,8 +1,10 @@
-import authtoken.AuthTokenCache;
-import eventbus.EventBusPoster;
-import eventbus.LoggedInEvent;
-import networking.LoginHttpEndpointSync;
-import networking.NetworkErrorExceptions;
+package example7;
+
+import example7.authtoken.AuthTokenCache;
+import example7.eventbus.EventBusPoster;
+import example7.eventbus.LoggedInEvent;
+import example7.networking.LoginHttpEndpointSync;
+import example7.networking.NetworkErrorExceptions;
 
 public class LoginUseCaseSync {
     public enum UseCaseResult {

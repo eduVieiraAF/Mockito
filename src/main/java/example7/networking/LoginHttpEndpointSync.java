@@ -1,4 +1,4 @@
-package networking;
+package example7.networking;
 
 public interface LoginHttpEndpointSync {
     /**

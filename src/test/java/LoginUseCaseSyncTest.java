@@ -1,8 +1,9 @@
-import authtoken.AuthTokenCache;
-import eventbus.EventBusPoster;
-import eventbus.LoggedInEvent;
-import networking.LoginHttpEndpointSync;
-import networking.NetworkErrorExceptions;
+import example7.authtoken.AuthTokenCache;
+import example7.eventbus.EventBusPoster;
+import example7.eventbus.LoggedInEvent;
+import example7.LoginUseCaseSync;
+import example7.networking.LoginHttpEndpointSync;
+import example7.networking.NetworkErrorExceptions;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
