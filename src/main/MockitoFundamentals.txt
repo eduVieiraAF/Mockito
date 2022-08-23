@@ -1,0 +1,12 @@
+Mockito:
+
+    → Easily create stubs and mocks;
+    → Powerful and versatile;
+    → It makes tests simple if otherwise fall back to manual test doubles.
+
+Considerations:
+
+    → Matter of personal preference;
+    → The more Mockito feature, the more complex tests become;
+
+
