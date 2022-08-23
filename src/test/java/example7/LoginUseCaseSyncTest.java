@@ -1,3 +1,5 @@
+package example7;
+
 import example7.authtoken.AuthTokenCache;
 import example7.eventbus.EventBusPoster;
 import example7.eventbus.LoggedInEvent;
