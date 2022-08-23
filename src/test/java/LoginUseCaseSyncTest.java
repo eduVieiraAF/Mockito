@@ -6,7 +6,10 @@ import example7.networking.LoginHttpEndpointSync;
 import example7.networking.NetworkErrorExceptions;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
@@ -17,21 +20,20 @@ import static org.junit.Assert.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+@RunWith(MockitoJUnitRunner.class)
 public class LoginUseCaseSyncTest {
     private static final String USERNAME = "username";
     private static final String PASSWORD = "password";
     public static final String AUTH_TOKEN = "authToken";
 
-    LoginHttpEndpointSync mLoginHttpEndpointSyncMock;
-    AuthTokenCache mAuthTokenCacheMock;
-    EventBusPoster mEventBusPosterMock;
+    @Mock LoginHttpEndpointSync mLoginHttpEndpointSyncMock;
+    @Mock AuthTokenCache mAuthTokenCacheMock;
+    @Mock EventBusPoster mEventBusPosterMock;
     LoginUseCaseSync SUT;
 
     @Before
     public void setup() throws Exception {
-        mLoginHttpEndpointSyncMock = mock(LoginHttpEndpointSync.class);
-        mAuthTokenCacheMock = mock(AuthTokenCache.class);
-        mEventBusPosterMock = mock(EventBusPoster.class);
+
         SUT = new LoginUseCaseSync(
                 mLoginHttpEndpointSyncMock,
                 mAuthTokenCacheMock,
