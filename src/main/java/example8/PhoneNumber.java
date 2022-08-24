@@ -1,4 +1,4 @@
-package exemple8;
+package example8;
 
 public class PhoneNumber {
     private final String mCountryCode;

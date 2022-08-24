@@ -1,4 +1,4 @@
-package exemple8;
+package example8;
 
 public class Address {
     private final String mCountry;

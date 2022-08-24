@@ -1,0 +1,15 @@
+Issues with unit tests after production code:
+
+    → hard to deduce requirements;
+    → intrinsic bias in testing of self-written;
+    → Cannot know whether all requirements were tested
+
+TDD:
+    → All tests up-front:
+        → create an empty class for SUT;
+        → write all required tests:
+            → you may expand SUT's public API to make tests compile;
+            → you can't write internal implementation of SUT.
+        → write internal implementation of SUT (after tests are written);
+        → run tests;
+        → debug until all tests pass.
