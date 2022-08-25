@@ -3,7 +3,6 @@ package example7;
 import example7.authtoken.AuthTokenCache;
 import example7.eventbus.EventBusPoster;
 import example7.eventbus.LoggedInEvent;
-import example7.LoginUseCaseSync;
 import example7.networking.LoginHttpEndpointSync;
 import example7.networking.NetworkErrorExceptions;
 import org.junit.Before;
@@ -28,9 +27,12 @@ public class LoginUseCaseSyncTest {
     private static final String PASSWORD = "password";
     public static final String AUTH_TOKEN = "authToken";
 
-    @Mock LoginHttpEndpointSync mLoginHttpEndpointSyncMock;
-    @Mock AuthTokenCache mAuthTokenCacheMock;
-    @Mock EventBusPoster mEventBusPosterMock;
+    @Mock
+    LoginHttpEndpointSync mLoginHttpEndpointSyncMock;
+    @Mock
+    AuthTokenCache mAuthTokenCacheMock;
+    @Mock
+    EventBusPoster mEventBusPosterMock;
     LoginUseCaseSync SUT;
 
     @Before
@@ -89,6 +91,7 @@ public class LoginUseCaseSyncTest {
         ArgumentCaptor<Object> ac = ArgumentCaptor.forClass(Object.class);
         SUT.loginSync(USERNAME, PASSWORD);
         verify(mEventBusPosterMock).postEvent(ac.capture());
+        //noinspection deprecation
         assertThat(ac.getValue(), is(instanceOf(LoggedInEvent.class)));
     }
 
