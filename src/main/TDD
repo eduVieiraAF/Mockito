@@ -13,3 +13,17 @@ TDD:
         → write internal implementation of SUT (after tests are written);
         → run tests;
         → debug until all tests pass.
+
+Benefits and limitations:
+    → convert requirements into tests;
+    → intrinsic bias in test of self-written conde;
+    → Can't know for sure all requirements were tested;
+    → Typos may interfere with test results;
+
+Uncle Bob's 3 rules of thumb:
+    → You are not allowed to write any production code unless it is to make a unit test pass;
+    → You are not allowed to write any more of a unit test than is sufficient to fail - compilation failures
+        are failures;
+    → You are not allowed to write any more production code then is sufficient to pass the one failing unit test.
+
+    (Well, refactoring production and test code should be rule #4)
